@@ -1,0 +1,53 @@
+name: Build & Test CI
+
+# Trigger workflow on every push to main/master branch and on pull requests
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-test:
+    name: Build, Lint & Test Pipeline
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: 📥 Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js runtime environment
+      - name: ⚙️ Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Step 3: Install dependencies (if package-lock.json exists)
+      - name: 📦 Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      # Step 4: Run Linter / Code Checks
+      - name: 🔍 Run Lint / Code Validation
+        run: npm run lint
+
+      # Step 5: Run Automated Unit Tests
+      - name: 🧪 Run Automated Tests
+        run: npm test
+
+      # Step 6: Run Build Process
+      - name: 🚀 Run Build Validation
+        run: npm run build

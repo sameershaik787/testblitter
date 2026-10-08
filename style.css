@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #3b82f6);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+input, select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #38bdf8;
+}
+
+.currency-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.btn-icon {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #38bdf8;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.btn-icon:hover {
+  background: #475569;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.primary-btn:hover {
+  opacity: 0.92;
+}
+
+.primary-btn:active {
+  transform: scale(0.99);
+}
+
+.result-box {
+  margin-top: 20px;
+  background: #0f172a;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #1e293b;
+}
+
+.result-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.result-box h2 {
+  font-size: 1.8rem;
+  color: #34d399;
+  margin: 6px 0;
+}
+
+.rate-info {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.quick-calc-row {
+  display: flex;
+  gap: 12px;
+}
+
+.summary-box {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.75rem;
+  color: #64748b;
+}

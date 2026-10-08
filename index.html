@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency & Financial Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💱 Currency & Finance Calculator</h1>
+      <p>Instant live conversion & financial calculations</p>
+    </header>
+
+    <main class="card">
+      <section class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount (e.g. 100)" min="0" step="any" value="100" />
+      </section>
+
+      <div class="currency-row">
+        <div class="form-group">
+          <label for="fromCurrency">From:</label>
+          <select id="fromCurrency">
+            <option value="USD" selected>USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+          </select>
+        </div>
+
+        <button id="swapBtn" class="btn-icon" title="Swap Currencies">⇄</button>
+
+        <div class="form-group">
+          <label for="toCurrency">To:</label>
+          <select id="toCurrency">
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="INR" selected>INR - Indian Rupee</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="convertBtn" class="btn primary-btn">Calculate Conversion</button>
+
+      <div id="resultBox" class="result-box">
+        <p class="result-label">Converted Amount:</p>
+        <h2 id="resultValue">--</h2>
+        <p id="rateInfo" class="rate-info"></p>
+      </div>
+
+      <hr />
+
+      <h3>Tax / Discount Quick Calculator</h3>
+      <div class="quick-calc-row">
+        <div class="form-group">
+          <label for="taxRate">Tax Rate (%):</label>
+          <input type="number" id="taxRate" placeholder="e.g. 18" value="18" />
+        </div>
+        <div class="form-group">
+          <label for="discountRate">Discount (%):</label>
+          <input type="number" id="discountRate" placeholder="e.g. 10" value="10" />
+        </div>
+      </div>
+      <div id="taxDiscountSummary" class="summary-box"></div>
+    </main>
+
+    <footer>
+      <p>Automated with GitHub Actions CI/CD pipeline &bull; Build & Test on Every Push</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
